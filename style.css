@@ -1,0 +1,338 @@
+:root{
+  --body-bg: #FFFFFF;
+  --hero-bg: #FFE9D9;
+  --style-bg: #FFB646;
+  --text-color: #080808;
+  --text-color2: #FF9738;
+  --text-light-color: #595755;
+  --border-color: #BFAFA3;
+}
+
+
+@font-face {
+  font-family: "poppins";
+  src: url("./assets/fonts/Poppins-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins';
+  color: var(--text-color);
+  transition: 200ms ease;
+}
+
+
+/* header */
+header{
+  width: 100vw;
+  height: 85px;
+  background: transparent;
+  backdrop-filter: blur(15px);
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /*border-bottom: 1.5px solid var(--border-color);*/
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.logo{
+  width: 60px;
+}
+
+.logo img{
+  width: 100%;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a{
+  text-decoration: none;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav a:hover{
+  color: var(--text-color2);
+}
+
+nav a svg{
+  fill: var(--text-color);
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  padding: 4px;
+  border-radius: 50%;
+  background: var(--style-bg);
+}
+
+
+/* home */
+#home{
+  width: 100%;
+  height: 850px;
+  max-height: 100vh;
+  background: var(--hero-bg);
+  padding: 150px 10vw 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  
+  margin-bottom: 1000px;
+}
+
+/*#home hr{
+  border: 0;
+  border-bottom: 1.2px solid var(--border-color)
+}*/
+
+svg{
+  width: 20px;
+}
+
+
+.home-container .hello{
+  font-size: 1.3rem;
+  position: relative;
+  padding-left: 90px;
+  margin-bottom: 15px;
+  z-index: 9;
+}
+
+.home-container .hello span{
+  font-size: 1.7rem;
+}
+
+.home-container .hello::after{
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: var(--text-color);
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 9;
+}
+
+.home-container h1{
+  font-size: 5rem;
+  line-height: 6rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 9;
+}
+
+.home-container h1::after{
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  background: var(--text-color2);
+  border-radius: 50%;
+  position: absolute;
+  left: 8%;
+  bottom: 5%;
+  z-index: -1;
+}
+
+.home-container h2{
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 9;
+}
+
+.btn-group{
+  margin-bottom:50px;
+  display: flex;
+  gap: 30px;
+  position: relative;
+  z-index: 9;
+}
+
+.btn-group > button{
+  padding: 16px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background: transparent;
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-group button svg{
+  width: 25px;
+  height: 25px;
+  fill: var(--text-color);
+  padding-left: 5px;
+}
+
+.btn-group .black{
+  background: var(--text-color);
+  color: #fff;
+  border: 1.5px solid var(--text-color);
+  
+}
+
+.black:hover{
+  color: var(--text-color);
+  border: 1.5px solid var(--border-color);
+}
+
+.btn-group .black svg {
+  fill: #fff;
+}
+
+.black:hover > svg{
+  fill: var(--text-color);
+}
+
+.white::after, .white::before{
+  background: var(--text-color);
+}
+
+.white:hover{
+  border: 1.5px solid var(--text-color);
+  color: #fff;
+}
+
+.white:hover > svg{
+  fill: #fff;
+}
+
+.btn::after, .btn::before{
+  content: "";
+  width: 120%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 150%;
+  left: 150%;
+  border-radius: 30px;
+  transition: 500ms ease;
+}
+
+.black::after, .black::before{
+  background: var(--hero-bg);
+}
+
+
+
+.btn::before{
+  top: -150%;
+  left: -150%;
+}
+
+.btn:hover::before{
+  top: 0;
+  left: -20%;
+  
+}
+
+.btn:hover::after{
+  top: 0%;
+  left: 20%;
+  
+}
+
+
+
+.client-social{
+  display: flex;
+  align-items: baseline;
+  gap: 30px;
+  position: relative;
+  z-index: 9;
+}
+
+.client-social p{
+  color: var(--text-light-color);
+  font-size: 1.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.client-social p span{
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-right: 20px;
+}
+
+.scial-icon{
+  display: flex;
+  gap: 20px;
+}
+
+.scial-icon a svg{
+  width: 25px;
+  height: 25px;
+}
+
+.scial-icon a svg:hover{
+  fill: var(--text-color2);
+}
+
+.hero-image{
+  position: absolute;
+  right: 0;
+  top: 85px;
+}
+
+.hero-image img{
+  width: 500px;
+}
+
+
+/* point */
+.point{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 99;
+}
+
+.point::after{
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--text-color2);
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.4;
+  top: 15%;
+  left: 15%;
+  z-index: -1;
+}
+
+.point span{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--text-light-color);
+}
